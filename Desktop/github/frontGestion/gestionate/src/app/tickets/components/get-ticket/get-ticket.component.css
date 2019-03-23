@@ -1,0 +1,6 @@
+  div.fixedHeaderTable {
+     position: relative;
+ }
+ div.fixedHeaderTable table {
+     width:100%;
+ }

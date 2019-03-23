@@ -1,0 +1,35 @@
+<div id="ListaTicket" class="container">
+    <h2 class="azul-oscuro-fuente header-lista">Lista de contenido: {{historyTickets.length}}</h2>
+
+    <!--    <div class="table-responsive-sm">-->
+    <!--    <div class="table">-->
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>  
+                <th>ticketNumber</th>
+                <th>contactName</th>
+                <th>subject</th>
+                <th>assignedName</th>
+                <th>createdTime</th>
+                <th>dueDate</th>
+                
+                <th>status</th>
+                <th>id</th> 
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let historyTicket of historyTickets">  
+                <td>{{historyTicket.ticketNumber}}#</td>
+                <td>{{historyTicket.contactName}}</td>               
+                <td>{{historyTicket.subject}}</td>
+                <td>{{historyTicket.assignedName}}</td>
+                <td>{{historyTicket.createdTime | date}}</td>
+                <td>{{historyTicket.dueDate | date}}</td>
+                <td>{{historyTicket.status}}</td>
+               <td>{{historyTicket.id}}</td> 
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

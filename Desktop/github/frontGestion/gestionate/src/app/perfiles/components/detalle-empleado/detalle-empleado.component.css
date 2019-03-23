@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.tab-actual {
+  border-bottom: 3px solid #007bff;
+}
+
+.imagen-perfil img{
+  width: 100%;
+}
+
+.tab-headers-options {
+  border-bottom: 1px solid #CCC;
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+
+.tab-headers-option {
+  cursor: pointer;
+  padding: 2%;
+}

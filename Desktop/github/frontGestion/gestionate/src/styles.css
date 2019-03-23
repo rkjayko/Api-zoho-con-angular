@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import '~material-design-icons/iconfont/material-icons.css';
+/*
+author: jecheverri
+  PrimeNg Accordion Header Background Color style overwriting.
+*/
+* {
+  box-sizing: border-box;
+}
+
+body .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a {
+    background-color: #007bff !important;
+}
+
+.azul-oscuro {
+  background-color: #2D3A75;
+}
+
+.azul-oscuro-fuente {
+  color: #2D3A75;
+}
+
+.azul-claro {
+  background-color: #4DB1E0 !important;
+}
+
+.azul-claro-fuente {
+  color: #4DB1E0;
+}
+
+.azul-adicional {
+  background-color: #426AA7;
+}
+
+.azul-adicional-fuente {
+  color: #426AA7;
+}
+
+.gris-oscuro {
+  background-color: #CCCCCC;
+}
+
+.gris-oscuro-fuente {
+  color: #CCCCCC;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}

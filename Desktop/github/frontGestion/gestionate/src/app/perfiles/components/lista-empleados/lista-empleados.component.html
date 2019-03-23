@@ -1,0 +1,36 @@
+<header>
+  <h1 class="azul-oscuro-fuente header-lista">Empleados</h1>
+</header>
+<div class="primary-icon azul-claro">
+  <a href="#">
+    <i class="material-icons">add</i>
+  </a>
+</div>
+<main>
+  <div *ngFor="let empleado of empleados">
+    <div class="row detalle-lista-empleado" routerLink="/detalleEmpleado/{{empleado.employeeId}}">
+      <a href=""></a>
+      <div class="col-lg-2">
+        <figure class="foto">
+          <img src="https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png">
+        </figure>
+      </div>
+      <div class="col-lg-8">
+        <section class="user-info-list">
+          <article class="nombre-empleado">
+            <p class="d-inline azul-claro-fuente">{{ empleado.name1 }} {{ empleado.name2 }}</p>
+            <p class="d-inline azul-claro-fuente">{{ empleado.last_name1 }} {{ empleado.last_name2 }}</p>
+          </article>
+          <div class="d-inline">
+            <p class="gris-oscuro-fuente">{{ empleado.corporateEmail }}</p>
+          </div>
+        </section>
+      </div>
+      <div class="col-lg-2">
+
+      </div>
+    </div>
+    <div class="separator"></div>
+  </div>
+</main>
+

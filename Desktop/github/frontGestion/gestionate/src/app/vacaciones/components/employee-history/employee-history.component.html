@@ -1,0 +1,90 @@
+<form>
+  <div class="container-fluid">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-3">
+          <b>Nombre Completo:</b>
+        </div>
+        <div class="col-sm-9">
+          {{employeeInfo.nombreCompleto}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <b>Identificación:</b>
+        </div>
+        <div class="col-sm-9">
+          {{employeeInfo.documentoIdentificacion}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <b>Fecha Inicio Contrato:</b>
+        </div>
+        <div class="col-sm-9">
+          {{employeeInfo.fechaInicioContrato | date: 'dd/MM/yyyy'}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <b>Días Disponibles:</b>
+        </div>
+        <div class="col-sm-9">
+          {{employeeInfo.diasDisponibles | number:'1.0-1'}}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-12">
+          <p-accordion (onOpen)="onPeriodTabOpen($event)" [multiple]="false">
+            <p-accordionTab *ngFor="let period of periodsSummary; let i = index">
+              <p-header>
+                <b>Fecha Inicio:&nbsp;&nbsp;</b>{{period.fechaInicio | date: 'dd/MM/yyyy'}}&nbsp;&nbsp;|&nbsp;&nbsp;
+                <b>Fecha Fin:&nbsp;&nbsp;</b>{{period.fechaFin | date: 'dd/MM/yyyy'}}&nbsp;&nbsp;|&nbsp;&nbsp;
+                <b>Días Pagados:&nbsp;&nbsp;</b>{{period.diasPagados}}&nbsp;&nbsp;|&nbsp;&nbsp;
+                <b>Días Disponibles:&nbsp;&nbsp;</b>{{period.diasDisponibles | number:'1.0-1'}}
+              </p-header>
+              <ng-template pTemplate="content">
+                <table class="table table-bordered table-hover table-responsive-sm">
+                  <thead align="center">
+                    <tr class="table-primary">
+                      <th>Solicitud</th>
+                      <th>Fecha Inicio</th>
+                      <th>Fecha Fin</th>
+                      <th>Tipo</th>
+                      <th>Días Pagados</th>
+                      <th>Días Excentos</th>
+                      <th>Estado</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let detail of periodDetails[i].periodDetails">
+                    <tr>
+                      <td>{{detail.idSolicitud}}</td>
+                      <td>{{detail.fechaInicio | date: 'dd/MM/yyyy'}}</td>
+                      <td>{{detail.fechaFin | date: 'dd/MM/yyyy'}}</td>
+                      <td>{{detail.tipoVacaciones}}</td>
+                      <td>{{detail.diasPagados}}</td>
+                      <td>{{detail.diasExcentos}}</td>
+                      <td>{{detail.estado}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </ng-template>
+            </p-accordionTab>
+          </p-accordion>
+        </div>
+      </div>
+    </div>
+    <div class="button-group">
+      <div class="row">
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-primary" style="float: right;">Solicitar Vacaciones Disfrutadas</button>
+        </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-primary">Solicitar Vacaciones Compensadas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

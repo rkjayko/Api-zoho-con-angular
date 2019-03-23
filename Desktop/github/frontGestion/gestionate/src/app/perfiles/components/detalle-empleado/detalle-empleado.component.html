@@ -1,0 +1,26 @@
+<main>
+  <div class="row">
+    <div class="col-lg-4">
+      <figure class="imagen-perfil">
+        <img src="https://www.law.berkeley.edu/wp-content/uploads/2015/04/Blank-profile.png">
+      </figure>
+    </div>
+    <div class="col-lg-8">
+      <h2>{{empleado.name1}} {{empleado.name2}} {{empleado.last_name1}} {{empleado.last_name2}}</h2>
+      <section>
+        <section class="tab-headers">
+          <ul class="tab-headers-options">
+            <li (click)="toggle(0)" class="tab-headers-option" [ngClass]="tabActual===0 ? 'tab-actual' : ''">Acerca de</li>
+            <li (click)="toggle(1)" class="tab-headers-option" [ngClass]="tabActual===1 ? 'tab-actual' : ''">Información sociodemográfica</li>
+            <li (click)="toggle(2)" class="tab-headers-option" [ngClass]="tabActual===2 ? 'tab-actual' : ''">Historial</li>
+          </ul>
+        </section>
+        <section [ngSwitch]="tabActual" class="tab-content">
+          <app-acerca-de *ngSwitchCase="0" [empleado]="empleado">0</app-acerca-de>
+          <app-info-socio-demografica *ngSwitchCase="1">1</app-info-socio-demografica>
+          <div *ngSwitchCase="2">2</div>
+        </section>
+      </section>
+    </div>
+  </div>
+</main>

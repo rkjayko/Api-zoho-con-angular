@@ -1,0 +1,26 @@
+<header>
+    <h2 class="azul-oscuro-fuente header-lista">Comentarios de la solicitud pp</h2>
+</header>
+<div class="primary-icon azul-claro">
+</div>
+<main>
+    <div *ngFor="let HistoryTicket of historyTickets">
+        <div class="row">
+            <div class="col-lg-8">
+                <section class="user-info-list">
+                    <article class="nombre-empleado">
+                        <p class="d-inline azul-claro-fuente"><b>{{ HistoryTicket.commenter.name}} :</b> {{ HistoryTicket.content}}</p>
+                    </article>
+                    <div class="d-inline">
+                        <p class="gris-oscuro-fuente">{{ HistoryTicket.commentedTime}}</p>
+                    </div>
+                </section>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <div class="separator"></div>
+    </div>
+    <app-create-history-ticket></app-create-history-ticket>
+</main>

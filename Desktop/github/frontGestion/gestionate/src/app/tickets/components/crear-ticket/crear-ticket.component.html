@@ -1,0 +1,78 @@
+<div id="createTicket" class="container">
+    <h1>Crear Ticket</h1>
+  <div class="col-xs-12 col-sm-10 col-md-12 col-sm-offset-1 col-md-offset 2">
+    <br>
+    <br>
+    <form [formGroup]="ticketForm">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="subCategory">SubCategoria</label>
+        <input type="text" class="form-control" id="subCategory" formControlName="subCategory">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="fecha">Due Date </label>
+        <i class="fa fa-check-circle" *ngIf="ticketForm.controls.fecha.valid"></i>
+        <i class="fa fa-exclamation-circle" *ngIf="ticketForm.controls.fecha.invalid && ticketForm.controls.fecha.touched"></i>
+        <input type="date" class="form-control" id="fecha" formControlName="fecha">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control" id="subject" formControlName="subject">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="contactid">Contact ID</label>
+        <input type="text" class="form-control" id="contactid" formControlName="contactid">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="departmentid">Department ID</label>
+        <select class="form-control" id="departmentid" formControlName="departmentid">
+          <option value="" hidden disabled>Seleccione...</option>
+          <option value=245460000000006907> Prueba 1</option>
+          <option value=245460000000006907> Prueba 2</option>
+          <option value=245460000000006907> Prueba 3</option>
+          <option value=245460000000006907> Prueba 4</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="assigneeid">Assignee ID</label>
+        <input type="text" class="form-control" id="assigneeid" formControlName="assigneeid">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" formControlName="description">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="classification">Classification</label>
+        <input type="text" class="form-control" id="classification" formControlName="classification">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+    </div>
+    <hr>
+        <br>
+      <div class="form-row">
+          <button class="btn btn-outline-primary" type="submit" [disabled]="!ticketForm.valid" (click)="createTicket()">Guardar</button>
+          <div class="form-group col-md-1"></div>
+          <button class="btn btn-outline-secondary" (click)="cancelCreateTicket()">Cancelar</button>
+      </div>
+    <br>
+    <br>
+      <p class="alert alert-danger" *ngIf="!ticketForm.valid 
+                                           && ticketForm.controls.subCategory.touched 
+                                           && ticketForm.controls.fecha.touched
+                                           && ticketForm.controls.contactid.touched
+                                           && ticketForm.controls.subject.touched
+                                           && ticketForm.controls.departmentid.touched
+                                           && ticketForm.controls.description.touched
+                                           && ticketForm.controls.classification.touched
+                                           && ticketForm.controls.assigneeid.touched
+                                           && ticketForm.controls.email.touched">Por favor complete todos los campos</p>
+    </form>
+  </div>
+</div>

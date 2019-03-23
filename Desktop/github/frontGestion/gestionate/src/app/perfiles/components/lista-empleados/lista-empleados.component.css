@@ -1,0 +1,70 @@
+main {
+  margin-top: 5vh;
+}
+
+.detalle-lista-empleado {
+  cursor: pointer;
+}
+
+.detalle-lista-empleado:hover {
+  background-color: #FAFAFA;
+}
+
+.foto img {
+  display: block;
+  width: 100%;
+}
+
+.header-lista {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.nombre-empleado {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.primary-icon {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  left: 80%;
+  color: white;
+  top: 80%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: -1px 14px 46px -16px rgba(0,0,0,0.71);
+  -moz-box-shadow: -1px 14px 46px -16px rgba(0,0,0,0.71);
+  box-shadow: -1px 14px 46px -16px rgba(0,0,0,0.71);
+  z-index: 1000;
+}
+
+.primary-icon:hover {
+  background-color: #2D3A75;
+}
+
+.primary-icon i {
+  color: white;
+  font-size: 2.8em;
+}
+
+/*.primary-icon a {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+}*/
+
+.separator {
+  padding-bottom: 2vh;
+}
+
+.user-info-list {
+  position: relative;
+  top: 27%;
+}
+
+

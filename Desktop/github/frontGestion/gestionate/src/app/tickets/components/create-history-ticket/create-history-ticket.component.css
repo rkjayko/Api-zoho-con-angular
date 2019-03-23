@@ -1,0 +1,9 @@
+.text-area-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.textarea {
+    border-radius: 17px !important;
+    width: 90%;
+}
